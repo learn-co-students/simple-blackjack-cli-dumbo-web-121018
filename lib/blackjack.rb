@@ -29,13 +29,14 @@ def initial_round
   return hand
 end
 
-def hit?(number)
+def hit?(hand)
   prompt_user
   answer = get_user_input
   if answer == "h"
-    deal_card
+    hand += deal_card
+    return hand
   elsif answer == "s"
-    # idk
+    return hand
   else 
     invalid_command
     prompt_user
